@@ -19,20 +19,20 @@ async function main() {
  const devAddress = '0x650E5c6071f31065d7d5Bf6CaD5173819cA72c41';
  const airdropAmount = '1000000000000000000'; // 1 token
  const airdropMinBaseCoinBalance = '1000000000000000000' // 0.1 BNB / MATIC / etc...
- const airdropTime = 900; // 15 minutes
+ const airdropTime = 604800; // 15 minutes
  const presalePricePresale = '1000000000000000000'; // 1 USD
  const presalePriceLiquidity = '2000000000000000000'; // 2 USD
- const presaleDepositTime = '300'; // 5 minutes
- const presaleClaimTime = '300'; // 5 minutes
+ const presaleDepositTime = '1800'; // 5 minutes
+ const presaleClaimTime = '3600'; // 5 minutes
  const poolTokensOurPerBlock = '100000000000000000'; // 0.1 tokens / block
  const poolTokensUSDPerBlock = '200000000000000000'; // 0.2 tokens / block
  const poolTokensOurLPPerBlock = '300000000000000000'; // 0.3 tokens / block
- const tokenOurName = 'Test token';
- const tokenOurSymbol = 'TEST';
+ const tokenOurName = 'Play to Earn';
+ const tokenOurSymbol = 'PTE';
  const tokenOurSupply = 10000000; // 10 000 000 tokens
  const tokenOurDecimals = 18;
  const tokenOurBurnFee = 2;
- const tokenOurDevFee = 3;
+ const tokenOurDevFee = 0;
  
  getWelcomeMessage('Token');
  netInfo = await getNetworkInfo();
@@ -80,11 +80,11 @@ async function main() {
  
  // PRESALE - TEST:
  console.log('Presale - depositOwn:');
- await runFunction(presale, 'depositOwn', '20000000000000000000'); // 20 tokens
+ await runFunction(presale, 'depositOwn', '2000000000000000000000'); // 20 tokens
  console.log('TokenTheir - approve:');
  await runFunction(tokenTheir, 'approve', presale.address, maxint);
  console.log('Presale - deposit:');
- await runFunction(presale, 'deposit', '10000000000000000000'); // 10 USD
+ await runFunction(presale, 'deposit', '1000000000000000000000'); // 10 USD
  
  // AIRDROP - RELEASE:
  //console.log('TokenOur - transfer:');
@@ -92,7 +92,7 @@ async function main() {
  
  // AIRDROP - TEST:
  console.log('TokenOur - transfer:');
- await runFunction(tokenOur, 'transfer', airdrop.address, '2000000000000000000'); // 2 tokens
+ await runFunction(tokenOur, 'transfer', airdrop.address, '1000000000000000000000000'); // 2 tokens
  console.log('Airdrop - start:');
  await runFunction(airdrop, 'start', airdropTime);
 
@@ -112,7 +112,7 @@ async function main() {
 
  // POOL - TEST:
  console.log('TokenOur - transfer:');
- await runFunction(tokenOur, 'transfer', pool.address, '10000000000000000000'); // 10 tokens
+ await runFunction(tokenOur, 'transfer', pool.address, '100000000000000000000000'); // 10 tokens
 
  // SUMMARY:
  getTotalCost();

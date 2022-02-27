@@ -13,10 +13,10 @@ async function main() {
  const routerAddress = '0x8954AfA98594b838bda56FE4C12a09D7739D179b'; // quickswap.exchange (Polygon Testnet)
  const maxint = '115792089237316195423570985008687907853269984665640564039457584007913129639935';
  var TokenTheir = await ethers.getContractFactory('Token');
- var tokenTheir = await TokenTheir.attach('0xF42a4429F107bD120C5E42E069FDad0AC625F615');
- var tokenOurLPAddress = '0xA4A52Ef4f83bfb5fC9661d6B558e144CAC0f1242';
+ var tokenTheir = await TokenTheir.attach('0xe16ef2f69C1C7837C8FF59418B980dC54ec01fd7');
+ var tokenOurLPAddress = '0xe16ef2f69C1C7837C8FF59418B980dC54ec01fd7';
  const burnAddress = '0x000000000000000000000000000000000000dEaD';
- const devAddress = '0x650E5c6071f31065d7d5Bf6CaD5173819cA72c41';
+ const devAddress = '0xDfeD851FBED8072fC95F5C39c74AA7BFb91b0e5d';
  const airdropAmount = '1000000000000000000'; // 1 token
  const airdropMinBaseCoinBalance = '1000000000000000000' // 0.1 BNB / MATIC / etc...
  const airdropTime = 604800; // 15 minutes
